@@ -2,8 +2,9 @@
   Todas las prendas
 <% end %>
 
-<div>
+<div class="prendas">
   <% @prendas.each do |p| %>
     <%= render 'prenda', prenda: p %>
+    <%= prenda_link(p) %>
   <% end %>
 </div>
