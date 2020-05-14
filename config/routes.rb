@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # HTTP_VERB PATH, to: 'CONTROLLER#ACTION'
 
-  resources :prendas
+  resources :prendas, only: [:index, :show]
 
 
   #get 'prendas', to: 'prendas#index'

@@ -6,8 +6,4 @@ class PrendasController < ApplicationController
   def show
     @prenda = Prenda.find(params[:id].to_i)
   end
-
-  def destroy
-
-  end
 end
