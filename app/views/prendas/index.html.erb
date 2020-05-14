@@ -1,3 +1,7 @@
+<% content_for :title do %>
+  Todas las prendas
+<% end %>
+
 <div>
   <% @prendas.each do |p| %>
     <%= render 'prenda', prenda: p %>
