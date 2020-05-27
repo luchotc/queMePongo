@@ -1,7 +1,19 @@
-<% content_for :title do %>
-  La prenda <%= @prenda.id %>
-<% end %>
+<p id="notice"><%= notice %></p>
 
-<%= render 'prenda', prenda: @prenda %>
+<p>
+  <strong>Name:</strong>
+  <%= @prenda.name %>
+</p>
 
+<p>
+  <strong>Title:</strong>
+  <%= @prenda.title %>
+</p>
 
+<p>
+  <strong>Context:</strong>
+  <%= @prenda.context %>
+</p>
+
+<%= link_to 'Edit', edit_prenda_path(@prenda) %> |
+<%= link_to 'Back', prendas_path %>

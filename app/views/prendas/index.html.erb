@@ -1,10 +1,31 @@
-<% content_for :title do %>
-  Todas las prendas
-<% end %>
+<p id="notice"><%= notice %></p>
 
-<div class="prendas">
-  <% @prendas.each do |p| %>
-    <%= render 'prenda', prenda: p %>
-    <%= prenda_link(p) %>
-  <% end %>
-</div>
+<h1>Prendas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Context</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prendas.each do |prenda| %>
+      <tr>
+        <td><%= prenda.name %></td>
+        <td><%= prenda.title %></td>
+        <td><%= prenda.context %></td>
+        <td><%= link_to 'Show', prenda %></td>
+        <td><%= link_to 'Edit', edit_prenda_path(prenda) %></td>
+        <td><%= link_to 'Destroy', prenda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prenda', new_prenda_path %>

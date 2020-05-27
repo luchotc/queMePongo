@@ -1,0 +1,32 @@
+<%= form_for prenda do |form| %>
+  <% if prenda.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prenda.errors.count, "error") %> prohibited this prenda from being saved:</h2>
+
+      <ul>
+      <% prenda.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :prenda_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :prenda_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :context %>
+    <%= form.text_area :context, id: :prenda_context %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
