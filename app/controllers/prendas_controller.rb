@@ -52,6 +52,6 @@ class PrendasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def prenda_params
-      params.require(:prenda).permit(:name, :title, :context)
+      params.require(:prenda).permit(:categoria, :color, :tipo, :color_secundario, :textura, :name)
     end
 end

@@ -1,19 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @prenda.name %>
-</p>
+<div>
+  <h1>Prenda <%= @prenda.id %></h1>
+  <div class="prendas-view">
+    <table class="guardarropa">
 
-<p>
-  <strong>Title:</strong>
-  <%= @prenda.title %>
-</p>
-
-<p>
-  <strong>Context:</strong>
-  <%= @prenda.context %>
-</p>
-
-<%= link_to 'Edit', edit_prenda_path(@prenda) %> |
-<%= link_to 'Back', prendas_path %>
+      <tr> <%= render 'header_prenda', should_show: true%> </tr>
+      <tr>
+        <%= render 'prenda', prenda: @prenda %>
+      </tr>
+    </table>
+  </div>
+  <div class="prendas-btn">
+    <%= link_to "Volver", prendas_path%>
+  </div>
+</div>

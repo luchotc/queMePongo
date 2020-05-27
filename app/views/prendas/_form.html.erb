@@ -1,4 +1,4 @@
-<%= form_for prenda do |form| %>
+<%= form_for prenda do |f| %>
   <% if prenda.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(prenda.errors.count, "error") %> prohibited this prenda from being saved:</h2>
@@ -13,7 +13,7 @@
 
   <p>
     <%= f.label :textura %><br/>
-    <%= f.select(:textura, options_for_select(Prenda.texturas))%>
+    <%= f.select(:textura, options_for_select(Prenda.texturas.keys.to_a))%>
   </p>
   <p>
     <%= f.label :color %><br/>
@@ -25,14 +25,14 @@
   </p>
   <p>
     <%= f.label :categoria %><br/>
-    <%= f.select(:categoria, options_for_select(Prenda.categoria)) %>
+    <%= f.select(:categoria, options_for_select(Prenda.categoria.keys.to_a)) %>
   </p>
   <p>
     <%= f.label :tipo %><br/>
-    <%= f.select(:tipo, options_for_select(Prenda.tipos)) %>
+    <%= f.select(:tipo, options_for_select(Prenda.tipos.keys.to_a)) %>
   </p>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>
