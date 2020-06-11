@@ -18,6 +18,12 @@
       <br/>
       <br/>
       <br/>
+
+      <% if current_user %>
+        <%= "El id del usuario logueado es: #{current_user.id}" %>
+      <% else %>
+        <%= "No hay nadie logueado" %>
+      <% end %>
     </nav>
     <%= yield %>
   </body>
