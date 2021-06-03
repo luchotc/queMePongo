@@ -1,9 +1,15 @@
 class PrendasController < ApplicationController
   before_action :set_prenda, only: [:show, :edit, :update, :destroy]
 
+  skip_before_action :validate_logged_user, only: [:index]
+
   # GET /prendas
   def index
-    @prendas = Prenda.all
+    if current_user
+      @prendas = current_user.prendas
+    else
+      []
+    end
   end
 
   # GET /prendas/1
