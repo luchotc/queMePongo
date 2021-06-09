@@ -1,8 +1,6 @@
 class PrendasController < ApplicationController
   before_action :set_prenda, only: [:show, :edit, :update, :destroy]
 
-  skip_before_action :validate_logged_user, only: [:index]
-
   # GET /prendas
   def index
     if current_user
