@@ -1,15 +1,5 @@
 class SessionsController < ApplicationController
 
-  def new
-    new view: form do
-      :email
-      :password
-
-      button :submit -> create
-    end
-
-  end
-
   # Autenticacion y creacion de sesion
   def create
     user = User.find_by(email: params[:email])
